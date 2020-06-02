@@ -6,17 +6,17 @@ pipeline {
  sh 'mvn clean compile'
  }
  }
-stage('Code Review') {
+stage('CodeReview') {
  steps{
  sh 'mvn clean pmd:pmd'
  }
  }
- stage('Unit Test') {
+ stage('UnitTest') {
  steps{
  sh 'mvn clean test'
  }
  }
- stage('Code Coverage') {
+ stage('CodeCoverage') {
  steps{ sh 'mvn clean cobertura:check'
  }
  }
